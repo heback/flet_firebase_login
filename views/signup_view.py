@@ -27,7 +27,7 @@ class SignupView(ft.View):
             self.update()
 
         self.controls = [
-            ft.AppBar(title=ft.Text("User Registration"), bgcolor=ft.colors.SURFACE_VARIANT),
+            ft.AppBar(title=ft.Text("User Registration"), bgcolor=ft.colors.LIGHT_BLUE_100),
             ft.Column(
                 [
                     ft.Text("회원가입", size=30),

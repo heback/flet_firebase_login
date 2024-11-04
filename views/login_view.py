@@ -22,7 +22,7 @@ class LoginView(ft.View):
                 self.update()
 
         self.controls = [
-            ft.AppBar(title=ft.Text("Login"), bgcolor=ft.colors.SURFACE_VARIANT),
+            ft.AppBar(title=ft.Text("Login"), bgcolor=ft.colors.TEAL_100),
             ft.Column(
                 [
                     ft.Text("로그인", size=30),
