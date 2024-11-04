@@ -16,6 +16,7 @@ class HomeView(ft.View):
             self.page.go("/")
 
         self.controls = [
+            ft.AppBar(title=ft.Text("Home"), bgcolor=ft.colors.SURFACE_VARIANT),
             ft.Column(
                 [
                     ft.Text(f"{email}님 환영합니다!", size=30),

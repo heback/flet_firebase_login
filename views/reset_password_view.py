@@ -20,6 +20,7 @@ class ResetPasswordView(ft.View):
             self.update()
 
         self.controls = [
+            ft.AppBar(title=ft.Text("Password Reset"), bgcolor=ft.colors.SURFACE_VARIANT),
             ft.Column(
                 [
                     ft.Text("비밀번호 재설정", size=30),

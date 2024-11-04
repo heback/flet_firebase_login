@@ -23,6 +23,7 @@ auth = firebase.auth()
 def main(page: ft.Page):
     page.title = "Firebase Auth with Flet"
 
+
     # 초기 화면 설정
     page.views.append(LoginView(page, auth))
 
@@ -38,7 +39,13 @@ def main(page: ft.Page):
             page.views.append(HomeView(page, auth))
         page.update()
 
+    def view_pop(view):
+        page.views.pop()
+        top_view = page.views[-1]
+        page.go(top_view.route)
+
     page.on_route_change = route_change
+    page.on_view_change = view_pop
     page.go(page.route)
 
-ft.app(target=main)
+ft.app(target=main, view=ft.AppView.WEB_BROWSER)
