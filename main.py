@@ -7,6 +7,7 @@ from views.reset_password_view import ResetPasswordView
 from views.home_view import HomeView
 
 # Firebase 설정
+# 자신의 설정으로 교체
 firebaseConfig = {
   'apiKey': "AIzaSyA8gTf61ob6mBMY9Tqje16vcitYpsXIOGw",
   'authDomain': "flet-course.firebaseapp.com",
@@ -21,17 +22,21 @@ firebase = pyrebase.initialize_app(firebaseConfig)
 auth = firebase.auth()
 
 def main(page: ft.Page):
+    page.window.width = 400
+    page.window.height = 800
+    page.window.resizable = False
     page.title = "Firebase Auth with Flet"
     # 초기 화면 설정
     page.views.append(LoginView(page, auth))
+    page.route = '/user/login'
 
     def route_change(route):
         page.views.clear()
-        if page.route == "/":
+        if page.route == "/user/login":
             page.views.append(LoginView(page, auth))
-        elif page.route == "/signup":
+        elif page.route == "/user/signup":
             page.views.append(SignupView(page, auth))
-        elif page.route == "/reset-password":
+        elif page.route == "/user/reset-password":
             page.views.append(ResetPasswordView(page, auth))
         elif page.route == "/home":
             page.views.append(HomeView(page, auth))

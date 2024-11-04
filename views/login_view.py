@@ -8,6 +8,7 @@ class LoginView(ft.View):
         self.build()
 
     def build(self):
+
         email = ft.TextField(label="Email", width=300)
         password = ft.TextField(label="Password", password=True, width=300)
         message = ft.Text()
@@ -29,8 +30,8 @@ class LoginView(ft.View):
                     email,
                     password,
                     ft.ElevatedButton("로그인", on_click=login),
-                    ft.TextButton("회원가입", on_click=lambda e: self.page.go("/signup")),
-                    ft.TextButton("비밀번호 재설정", on_click=lambda e: self.page.go("/reset-password")),
+                    ft.TextButton("회원가입", on_click=lambda e: self.page.go("/user/signup")),
+                    ft.TextButton("비밀번호 재설정", on_click=lambda e: self.page.go("/user/reset-password")),
                     message,
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,

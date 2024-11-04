@@ -35,7 +35,7 @@ class SignupView(ft.View):
                     password,
                     confirm_password,
                     ft.ElevatedButton("회원가입", on_click=signup),
-                    ft.TextButton("로그인으로 돌아가기", on_click=lambda e: self.page.go("/")),
+                    ft.TextButton("로그인으로 돌아가기", on_click=lambda e: self.page.go("/user/login")),
                     message,
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,

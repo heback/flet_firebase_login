@@ -26,7 +26,7 @@ class ResetPasswordView(ft.View):
                     ft.Text("비밀번호 재설정", size=30),
                     email,
                     ft.ElevatedButton("재설정 링크 보내기", on_click=reset_password),
-                    ft.TextButton("로그인으로 돌아가기", on_click=lambda e: self.page.go("/")),
+                    ft.TextButton("로그인으로 돌아가기", on_click=lambda e: self.page.go("/user/login")),
                     message,
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,
