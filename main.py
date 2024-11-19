@@ -4,7 +4,7 @@ import pyrebase
 from views.signup_view import SignupView
 from views.login_view import LoginView
 from views.reset_password_view import ResetPasswordView
-from views.home_view import HomeView
+from views.home_view2 import HomeView
 
 # Firebase 설정
 # 자신의 설정으로 교체
@@ -30,7 +30,7 @@ def main(page: ft.Page):
     page.views.append(LoginView(page, auth))
     page.route = '/user/login'
 
-    def route_change(route):
+    def route_change(e):
         page.views.clear()
         if page.route == "/user/login":
             page.views.append(LoginView(page, auth))
