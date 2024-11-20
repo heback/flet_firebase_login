@@ -4,7 +4,7 @@ import pyrebase
 from views.signup_view import SignupView
 from views.login_view import LoginView
 from views.reset_password_view import ResetPasswordView
-from views.home_view2 import HomeView
+from views.home_view2 import HomeView, IntroductionView, UserListView, UserStatisticsView
 
 # Firebase 설정
 # 자신의 설정으로 교체
@@ -38,8 +38,14 @@ def main(page: ft.Page):
             page.views.append(SignupView(page, auth))
         elif page.route == "/user/reset-password":
             page.views.append(ResetPasswordView(page, auth))
+        elif page.route == "/user/user-list":
+            page.views.append(UserListView(page, auth))
+        elif page.route == "/user/user-statistics":
+            page.views.append(UserStatisticsView(page, auth))
         elif page.route == "/home":
             page.views.append(HomeView(page, auth))
+        elif page.route == "/introduction":
+            page.views.append(IntroductionView(page, auth))
         page.update()
 
     # def view_pop(view):

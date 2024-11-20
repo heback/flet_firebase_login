@@ -42,9 +42,9 @@ class HomeView(ft.View):
             if selected_index == 0:
                 self.page.go("/introduction")
             elif selected_index == 1:
-                self.page.go("/user_list")
+                self.page.go("/user/user-list")
             elif selected_index == 2:
-                self.page.go("/user_statistics")
+                self.page.go("/user/user-statistics")
 
         navigation_bar = ft.NavigationBar(
             destinations=[
@@ -89,9 +89,13 @@ class IntroductionView(ft.View):
             if selected_index == 0:
                 self.page.go("/introduction")
             elif selected_index == 1:
-                self.page.go("/user_list")
+                self.page.go("/user/user-list")
             elif selected_index == 2:
-                self.page.go("/user_statistics")
+                self.page.go("/user/user-statistics")
+
+        def logout(e):
+            self.page.session.remove("user")
+            self.page.go("/user/login")
 
         navigation_bar = ft.NavigationBar(
             destinations=[
@@ -108,6 +112,7 @@ class IntroductionView(ft.View):
             ft.Column(
                 [
                     ft.Text("여기는 소개 페이지입니다.", size=30),
+                    ft.ElevatedButton('로그아웃', on_click=logout)
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
@@ -129,9 +134,9 @@ class UserListView(ft.View):
             if selected_index == 0:
                 self.page.go("/introduction")
             elif selected_index == 1:
-                self.page.go("/user_list")
+                self.page.go("/user/user-list")
             elif selected_index == 2:
-                self.page.go("/user_statistics")
+                self.page.go("/user/user-statistics")
 
         navigation_bar = ft.NavigationBar(
             destinations=[
@@ -174,9 +179,9 @@ class UserStatisticsView(ft.View):
             if selected_index == 0:
                 self.page.go("/introduction")
             elif selected_index == 1:
-                self.page.go("/user_list")
+                self.page.go("/user/user-list")
             elif selected_index == 2:
-                self.page.go("/user_statistics")
+                self.page.go("/user/user-statistics")
 
         navigation_bar = ft.NavigationBar(
             destinations=[
