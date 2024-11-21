@@ -48,13 +48,7 @@ def main(page: ft.Page):
             page.views.append(IntroductionView(page, auth))
         page.update()
 
-    # def view_pop(view):
-    #     page.views.pop()
-    #     top_view = page.views[-1]
-    #     page.go(top_view.route)
-
     page.on_route_change = route_change
-    # page.on_view_change = view_pop
     page.go(page.route)
 
 ft.app(target=main)
